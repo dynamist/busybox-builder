@@ -24,4 +24,4 @@ WORKDIR /build/busybox
 
 COPY config .config
 RUN make
-RUN file busybox && cp -a busybox /artifacts
+RUN ./busybox && ls && file busybox && cp -a busybox /artifacts
