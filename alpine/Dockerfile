@@ -1,6 +1,6 @@
 FROM alpine:3.8
 
-MAINTAINER Henrik Holmboe "henrik@dynamist.se"
+LABEL maintainer="Henrik Holmboe <henrik@dynamist.se>"
 
 ENV BUSYBOX_REPO "git://git.busybox.net/busybox"
 ENV BUSYBOX_TAG  "1_29_2"
