@@ -27,6 +27,8 @@ RUN git clone $BUSYBOX_REPO --branch $BUSYBOX_TAG --depth 1
 WORKDIR /build/busybox
 
 COPY config .config
+RUN make oldconfig
+RUN cp -av .config /artifacts/config
 RUN make
 RUN cp -av busybox /artifacts
 
