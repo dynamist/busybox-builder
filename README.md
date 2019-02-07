@@ -1,6 +1,6 @@
 # Busybox Builder
 
-Statically build Busybox.
+Statically build Busybox with SELinux support.
 
     $ make -C alpine
     $ make -C centos
