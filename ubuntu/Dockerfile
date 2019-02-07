@@ -2,6 +2,7 @@ FROM ubuntu:18.04
 
 LABEL maintainer="Henrik Holmboe <henrik@dynamist.se>"
 
+# https://git.busybox.net/busybox
 ENV BUSYBOX_REPO "git://git.busybox.net/busybox"
 ENV BUSYBOX_TAG  "1_29_2"
 

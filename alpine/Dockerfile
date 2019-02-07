@@ -1,7 +1,8 @@
-FROM alpine:3.8
+FROM alpine:3.9
 
 LABEL maintainer="Henrik Holmboe <henrik@dynamist.se>"
 
+# https://git.busybox.net/busybox
 ENV BUSYBOX_REPO "git://git.busybox.net/busybox"
 ENV BUSYBOX_TAG  "1_29_2"
 
