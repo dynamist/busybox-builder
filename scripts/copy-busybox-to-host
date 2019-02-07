@@ -1,5 +1,5 @@
 #!/bin/bash
 
-docker run --rm -i -u $(id -u) -v ${PWD}:/artifacts $(docker images -q $1 | head -n 1) << EOF
-cp busybox /artifacts
+docker run --rm -i -u $(id -u) -v ${PWD}:/copy $(docker images -q $1 | head -n 1) << EOF
+cp busybox /copy
 EOF
