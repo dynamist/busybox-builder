@@ -4,7 +4,7 @@ LABEL maintainer="Henrik Holmboe <henrik@dynamist.se>"
 
 # https://git.busybox.net/busybox
 ENV BUSYBOX_REPO "git://git.busybox.net/busybox"
-ENV BUSYBOX_TAG  "1_29_2"
+ENV BUSYBOX_TAG  "1_30_0"
 
 RUN yum groupinstall -y "Development Tools" \
     && yum clean all
@@ -22,6 +22,9 @@ WORKDIR /build
 
 RUN git clone $BUSYBOX_REPO --branch $BUSYBOX_TAG --depth 1
 WORKDIR /build/busybox
+
+# Fix bug in Busybox 1.30.0
+RUN sed -i 's/ACTION_RECURSIVE/ACTION_RECURSE/' selinux/chcon.c
 
 COPY config .config
 RUN make oldconfig
