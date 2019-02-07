@@ -1,3 +1,3 @@
 build:
 	docker build --rm -t busybox-alpine .
-	../scripts/copy-busybox-to-host busybox-alpine
+	../scripts/copy-file-to-host busybox-alpine busybox
