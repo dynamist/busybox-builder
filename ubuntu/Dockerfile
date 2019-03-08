@@ -6,12 +6,16 @@ LABEL maintainer="Henrik Holmboe <henrik@dynamist.se>"
 ENV BUSYBOX_REPO "git://git.busybox.net/busybox"
 ENV BUSYBOX_TAG  "1_30_0"
 
-RUN apt update \
-    && apt install -y build-essential git pkg-config file \
+RUN apt-get update \
+    && apt-get install -y \
+       build-essential \
+       git \
+       pkg-config \
+       file \
     && rm -rf /var/lib/apt/lists/*
 
-RUN apt update \
-    && apt install -y \
+RUN apt-get update \
+    && apt-get install -y \
        libncurses5-dev \
        libselinux1-dev \
        libsepol1-dev \
