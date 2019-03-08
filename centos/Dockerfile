@@ -26,6 +26,12 @@ WORKDIR /build/busybox
 # Fix bug in Busybox 1.30.0
 RUN sed -i 's/ACTION_RECURSIVE/ACTION_RECURSE/' selinux/chcon.c
 
+# Avoid Kconfig outputting the timestamp into generated configuration files. We
+# use this to compare against the configuration files in debian/config/pkg for
+# builds on Linux so that we can detect upstream configuration changes (e.g.
+# added applets).
+ENV KCONFIG_NOTIMESTAMP "1"
+
 COPY config .config
 RUN make oldconfig
 RUN cp -a .config /artifacts/config
