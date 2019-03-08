@@ -4,7 +4,7 @@ LABEL maintainer="Henrik Holmboe <henrik@dynamist.se>"
 
 # https://git.busybox.net/busybox
 ENV BUSYBOX_REPO "git://git.busybox.net/busybox"
-ENV BUSYBOX_TAG  "1_30_0"
+ENV BUSYBOX_TAG  "1_30_1"
 
 # https://git.alpinelinux.org/cgit/aports/tree/main/alpine-mirrors/mirrors.yaml
 RUN echo "@testing https://alpine.mirror.wearetriple.com/edge/testing" >> /etc/apk/repositories
@@ -25,9 +25,6 @@ WORKDIR /build
 
 RUN git clone $BUSYBOX_REPO --branch $BUSYBOX_TAG --depth 1
 WORKDIR /build/busybox
-
-# Fix bug in Busybox 1.30.0
-RUN sed -i 's/ACTION_RECURSIVE/ACTION_RECURSE/' selinux/chcon.c
 
 # Avoid Kconfig outputting the timestamp into generated configuration files. We
 # use this to compare against the configuration files in debian/config/pkg for
