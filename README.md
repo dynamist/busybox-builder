@@ -34,11 +34,9 @@ Partial RELRO   No canary found   NX enabled    No PIE          No RPATH   No RU
 Sizes of Busybox version 1.31.1:
 
 ```console
-$ for busybox in */busybox; do size $busybox; done
+$ size */busybox
    text    data     bss     dec     hex filename
-1731941   17383   20377 1769701  1b00e5 alpine/busybox
-   text    data     bss     dec     hex filename
-3392984    9045   46411 3448440  349e78 centos/busybox
-   text    data     bss     dec     hex filename
-3673481   39721   43803 3757005  3953cd ubuntu/busybox
+1732134   17383   20377 1769894  1b01a6 alpine/busybox
+3393165    9045   46411 3448621  349f2d centos/busybox
+3673677   39721   43803 3757201  395491 ubuntu/busybox
 ```
