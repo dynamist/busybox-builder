@@ -28,3 +28,13 @@ This is the result:
     Partial RELRO   No canary found   NX enabled    No PIE          No RPATH   No RUNPATH   No Symbols      No      0               0       centos/busybox
     RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      Symbols         FORTIFY Fortified       Fortifiable  FILE
     Partial RELRO   No canary found   NX enabled    No PIE          No RPATH   No RUNPATH   No Symbols      No      0               0       ubuntu/busybox
+
+Sizes of Busybox version 1.31.1:
+
+    $ for busybox in */busybox; do size $busybox; done
+       text    data     bss     dec     hex filename
+    1731941   17383   20377 1769701  1b00e5 alpine/busybox
+       text    data     bss     dec     hex filename
+    3392984    9045   46411 3448440  349e78 centos/busybox
+       text    data     bss     dec     hex filename
+    3673481   39721   43803 3757005  3953cd ubuntu/busybox
