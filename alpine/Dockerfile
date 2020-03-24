@@ -4,7 +4,7 @@ LABEL maintainer="Henrik Holmboe <henrik@dynamist.se>"
 
 # https://git.busybox.net/busybox
 ENV BUSYBOX_REPO "git://git.busybox.net/busybox"
-ENV BUSYBOX_TAG  "1_30_1"
+ENV BUSYBOX_TAG  "1_31_1"
 
 # https://git.alpinelinux.org/cgit/aports/tree/main/alpine-mirrors/mirrors.yaml
 RUN echo "@testing https://alpine.mirror.wearetriple.com/edge/testing" >> /etc/apk/repositories
