@@ -30,7 +30,7 @@ WORKDIR /build/busybox
 ENV KCONFIG_NOTIMESTAMP "1"
 
 COPY config .config
-RUN make oldconfig
+RUN yes "" | make oldconfig
 RUN cp -a .config /artifacts/config
 RUN make
 RUN cp -av busybox /artifacts
