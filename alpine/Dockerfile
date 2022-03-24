@@ -1,4 +1,4 @@
-FROM alpine:3.11.5
+FROM alpine:3.15.2
 
 LABEL maintainer="Henrik Holmboe <henrik@dynamist.se>"
 
